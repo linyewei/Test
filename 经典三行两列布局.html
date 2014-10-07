@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content="text/html; charset=gb2312">
+<title>经典三行两列布局</title>
+<style type="text/css">
+
+body {
+	background: #999;
+	text-align: center;
+	color: #333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:link, visited {color:#004592;text-decoration:none;}
+a:hover {color:#004592;text-decoration:underline;}
+a:active {color:#004592;text-decoration: none;}
+
+img {border:0px;}
+
+#header {
+	margin-right: auto;
+	margin-left: auto; 
+	padding: 0px;
+	width: 776px;
+	background: #EEE;
+	height: 60px;
+	text-align: left;
+}
+
+#contain {
+	margin-left: auto;
+	margin-right: auto;
+	width: 776px;
+}
+
+#mainbg {
+	float: left;
+	padding: 0px;
+	width: 776px;
+	background: #60A179;
+}
+
+#right {
+	float: right; 
+	margin: 2px 0px 2px 0px;
+	padding: 0px; 
+	width: 574px; 
+	background: #ccd2de;
+	text-align:left;
+}
+
+#left {
+	float: left; 
+	margin: 2px 2px 0px 0px; 
+	padding: 0px; 
+	background: #F2F3F7;
+	width: 200px;
+	text-align:left;
+}
+
+#footer {
+	clear: both;
+	margin-right: auto;
+	margin-left: auto; 
+	padding: 0px;
+	width: 776px;
+	background: #EEE;
+	height: 60px;
+}
+
+.text {margin:0px;padding:20px;}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header">headr</div>
+
+<div id="contain">
+	<div id="mainbg">
+		<div id="right">
+			<div class="text"><p>这个XHTML1标准的DIV+CSS布局是著名网页设计师阿捷2004年发布在《网页设计师》上的，一个非常经典的布局，在IE、Mozilla和Opera浏览器中均可以实现居中和高度自适应。</p><p>一般情况下，头部（A区）为站点导航，底部（D区）为辅助导航及版权信息等，左侧（B区）会放搜索、列表、排行等功能性内容，核心内容就集中在右侧（C区）。代码编写顺序是”A->B->C->D”，也可以理解为”功能->功能->核心内容->功能”。</p><p>都知道，搜索引擎蜘蛛爬行时，是按着页面代码顺序自上而下的，这种情况下蜘蛛很难最快的爬行到核心内容；而当页面代码过多的时候蜘蛛完全有可能没有爬行到核心内容就折回，抓取到的是与其他页面一样的功能内容时，这个页面就成为相似网页。</p><p>本布局方式，页面代码顺序是”A->C->B->D”，按内容分布可以理解为”功能->核心内容->功能->功能”，在不改变页面展示的情况下，将核心内容部分放到了前面。</p><p>这样，蜘蛛爬行时就能在最短时间内索引到网页的核心内容。</p></div>
+		</div>
+		<div id="left">
+			<div class="text"><p>DIV+CSS</p><p>三行两列经典布局</p></div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">footer</div>
+</body>
+</html>

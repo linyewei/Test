@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Div+CSS式圆角</title>
+</head>
+<style>
+.l1{background:#fff; width:4px; height:1px; float:left;OVERFLOW: hidden;}
+.r1{background:#fff; width:4px; height:1px; float:right;OVERFLOW: hidden;}
+.l2{background:#fff; width:2px; height:1px; float:left;OVERFLOW: hidden;}
+.r2{background:#fff; width:2px; height:1px; float:right;OVERFLOW: hidden;}
+.l3{background:#fff; width:1px; height:2px; float:left;OVERFLOW: hidden;}
+.r3{background:#fff; width:1px; height:2px; float:right;OVERFLOW: hidden;}
+.x{clear:both}
+
+#top .t{background:#99BCFC; width:230px; height:25px;}
+#top .c{background:#FFFFFF; border:1px #99BCFC solid; width:208px;height:250px; padding:0 10px;}
+#top .b{background:#99BCFC;width:230px; height:4px;}
+
+</style>
+<body>
+<div id="top">
+    <div class="t">
+        <div class="l1"></div>
+        <div class="r1"></div>
+        <div class="x"></div>
+        <div class="l2"></div>
+        <div class="r2"></div>
+        <div class="x"></div>
+        <div class="l3"></div>
+        <div class="r3"></div>
+        <div class="x"></div>					
+    </div>
+
+    <div class="c">
+    Div+CSS式圆角
+    </div>
+    
+    <div class="b">						
+        <div class="l3"></div>
+        <div class="r3"></div>
+        <div class="x"></div>
+        <div class="l2"></div>
+        <div class="r2"></div>
+        <div class="x"></div>
+        <div class="l1"></div>
+        <div class="r1"></div>
+        <div class="x"></div>
+    </div>					
+</div>
+</body>
+</html>

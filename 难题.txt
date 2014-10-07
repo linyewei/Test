@@ -1,0 +1,123 @@
+1、用百度提供免费搜索代码进行搜索，为什么出现乱码？ 
+编码问题.
+修改—页面属性—标题/编码，将其改为GB2312
+
+2、如何去除图片链接的边杠框
+在<img>中加入onfocus="blur()" border=0
+例如：
+<img onfocus="blur()" border=0 src=**.gif>
+css:
+img{border:0px;}
+
+3、如何在浏览器地址栏前添加自定义的小图标？
+
+预先制作一个图标文件，大小为16*16像素。文件名为favicon.ico，将图片上传到网站根目录下，即可自动识别！
+ 
+注意:是根目录，不是image目录。
+
+4、滚动条的颜色css
+html的时候，在 css里加入： 
+body {
+scrollbar-3dlight-color:滚动条亮边框颜色 
+scrollbar-arrow-color:滚动条方向箭头的颜色 
+scrollbar-darkshadow-color:滚动条下边和右边的边沿颜色 
+scrollbar-face-color:滚动条3D表面的颜色 
+scrollbar-highlight-color:滚动条斜面和左面颜色 
+scrollbar-shadow-color:滚动条下斜面和右面颜色 
+scrollbar-track-color:滚动条底版颜色 
+scrollbar-base-color:滚动条基准颜色。其它界面颜色将据此自动调整（一般单独使用）
+}
+但是同样的代码，应用在 xhtml下就不起作用了。这时只要将body标签修改成html标签即可
+
+5、下拉菜单的制作
+分别建立，title（触发点）、menu1（菜单）两个层
+设置;
+(1)选中title，标签/添加行为：[1]menu1（显示），OnMouseOver;[2]menu1（隐藏），OnMouseOut
+(2)选中menu1，标签/添加行为：[1]menu1（显示），OnMouseOver;[2]menu1（隐藏），OnMouseOut
+(3)在CSS/AP元素中，把menu1设为隐藏。
+
+6、〖添加到收藏夹〗命令的实现 
+
+　　[格式]:window.external.AddFavorite('url', '“网站名”)
+　　[说明]将本页添加到收藏夹。
+　　[举例]在<body></body>之间加入：
+　　<a href="javascript:window.external.AddFavorite('http:www.baidu.com/', '百度')">添加到收藏夹</a>
+
+7、设为首页：
+方法一：
+<a onClick="this.style.behavior='url(#default#homepage)';this.sethomepage('http://www.crfans.com/');return false;" href="http://www.baidu.com/" title="将本站设为你的首页">设为首页</a>
+方法二：
+<span onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('网址');" style="CURSOR: hand">设为首页</span>
+
+<a href="mailto:crfans@126.com">联系我们</a> 
+
+8、在<td>中加入onmouseover="style.backgroundColor='#C86F70'"onmouseout="style.backgroundColor='#DDC676'" bgcolor="#DDC676"
+
+9、关于横向列表的实现
+ul{display:inline;list-style-type:none;}
+ul li{float:left; width:X%;}
+
+10、去掉Form周围的空区域
+form{margin:0px}
+
+11、首行缩进
+text-indent可以使得容器内首行缩进一定单位。比如中文段落一般每段前空两个汉字。可以这么写：
+
+p{
+ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
+}
+
+12、设置段落间距
+margin:**px
+
+13、滚动标签
+<marquee></marquee>
+
+让网站变成灰色调
+body{filter:gray;}
+
+14、水平线
+<hr />
+(1)css
+大小：height:1px;
+颜色：color:#333;
+居中：margin:0px auto;
+(2)<hr width=800px size=1 color=#5151A2 align=center noshade /> 
+size:厚度
+noshade：无阴影
+
+15、table的CSS
+
+16、css如何控制页面居中
+IE：
+#center {margin: 0 auto;}
+PS：
+一定要有：<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+Firefox：
+#center {margin: 0 auto;}
+
+17、调用外部CSS样式表
+ <link rel="stylesheet" rev="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+18、form表单中的enctype="multipart/form-data的作用
+enctype用来定义表单提交的格式。
+form设置了enctype="multipart/form-data" 属性后，就是2进制传输数据了 
+form里面的input的值传过去的不是以2进制的方式，所以request就得不到值了。一般可以利用组件来读去input的值，如 xxx."inputname".value 
+
+18、html按钮button怎么加超链接
+(1).如果让本页转向新的页面则用： 
+<input type=button onclick="window.location.href('连接')"> 
+ex:
+<td><div align="center">      
+        <input type="submit" name="Submit" value="输入完毕提交" onclick="window.location.href='DeptManager.html';">      
+          </div>
+   </td>
+(2).如果需要打开一个新的页面进行转向，则用： 
+<input type=button onclick="window.open('连接')">
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+#a{
+border-left:1px #333 solid;
+border-right:1px #333 solid;
+width:300px;
+height:500px;
+}
+.b{
+height:1px;
+overflow:hidden;
+border-left:1px #333 solid;
+border-right:1px #333 solid;
+}
+</style>
+</head>
+<body>
+<div>
+<div class="b" style="margin-left:3px;width:294px;background:#333"></div>
+<div class="b" style="margin-left:2px;width:296px;"></div>
+<div class="b" style="margin-left:1px;width:298px"></div>
+<div id="a">
+
+以我的能力，纯DIV+CSS实现的效果只能做到这样了。这里是放置内容的地方，自己看一看代码的规律，很容易明白。
+
+代码很简单，a层为放置内容的层，其width值为300，然后向外以2像素的宽度递减。最外一层要加上background为个属性，目的是要将上、下两线条呈现出来。
+
+这里实现了3像素的圆角边框，b层的数量决定了要实现多少个像素边框。建议不要多于3层，最好是2层，即2像素圆角边框，或者1层，因为层数越多，圆角的表现就越不圆滑。在firefox  IE6 都通过测试。
+
+</div>
+<div class="b" style="margin-left:1px;width:298px"></div>
+<div class="b" style="margin-left:2px;width:296px;"></div>
+<div class="b" style="margin-left:3px;width:294px;background:#333"></div>
+</div>
+</body>
+</html>

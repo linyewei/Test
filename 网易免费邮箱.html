@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>网易免费邮箱</title>
+<style type="text/css">
+*{padding:0; margin:0;}
+body{background:#FFF;font-size: 14px;font-family:verdana;}
+ul{list-style:none;}
+a{text-decoration:none;color:#007BBB;}
+img{border:none;}
+/*隐藏文字图*/
+.login .tit,#footer dl dt,.tab-list li a{text-indent:-9999em;}
+/*背景图*/
+#header .sublogo,.login .tit,.btn,dl dt{background:url(image/global_20110815.png) no-repeat;}
+#content{ background:url(image/bg_20110815.jpg) no-repeat;}
+/*字号*/
+.links,.login label,#footer,.copyright,.forgetPas,.getPassword,.trends{font-size:12px;}
+.red-text{color:red!important}
+.links a,.copyright li a{color:#888;}
+
+#container{width:959px; margin:0 auto;}
+
+#header{height:84px;position:relative;}
+#header img{position:absolute;left:-15px;top:23px; border:0px;}
+#header .sublogo{width:260px; height:40px; background-position:-2px -191px; position:absolute; left:114px;top:29px;}
+.links{position:absolute; right:0;top:40px;width:240px;}
+.links li{float:left;margin-left:12px;color:#888;}
+
+#content{height:426px;position:relative; padding:61px 70px 0 0;}
+/*标签项*/
+.tab-list{margin:0 0 0 256px;}
+.tab-list li a{display:block;width:208px; height:78px; background:url(image/tab_20110815.png) no-repeat;}
+.tab-list .mail-163 a{background-position:0 0;}
+.tab-list .mail-126 a{background-position:0 -78px;}
+.tab-list .mail-yeah a{background-position:0 -156px;}
+.tab-list .mail-qiye a{background-position:0 -234px;}
+/*鼠标划过*/
+.tab-list .mail-163 a:hover{background-position:-256px 0;}
+.tab-list .mail-126 a:hover{background-position:-256px -78px;}
+.tab-list .mail-yeah a:hover{background-position:-256px -156px;}
+.tab-list .mail-qiye a:hover{background-position:-256px -234px;}
+
+/*选中*/
+.m163 .mail-163 a{background-position:-512px 0!important}
+.m126 .mail-126 a{background-position:-512px -78px!important}
+.yeah .mail-yeah a{background-position:-512px -156px!important}
+.qiye .mail-qiye a{background-position:-512px -234px!important}
+
+/*登录*/
+.login{width:400px;position:absolute; left:470px;top:50px; padding:25px 0 0 35px;}
+.login form{margin-bottom:23px;}
+.login p{margin-bottom:15px;}
+.login a{text-decoration:underline;}
+.login .tit{width:265px;height:32px;margin-bottom:15px;}
+.login label{width:44px;line-height: 30px;margin-right:10px;}
+.login .ipt{width:182px; margin-right:10px;border:1px solid #878787;font-size:14px;font-weight:bold;padding:6px 3px 6px;}
+.login .domain-qiye{display:none; width:85px;}
+.login .at{font-weight:bold; margin-right:5px; vertical-align:middle;}
+.login .btn{width:86px; height:34px; border:none;font-size:14px; font-weight:bold;color:#FFF;}
+.domain{font-size:14px;font-weight:bold; vertical-align:middle;font-family: verdana;}
+.getPassword{display:none;}
+.version select{width:190px; cursor:pointer;}
+.login .opt{margin:-10px 0 10px 0;}
+.login .opt input{width:16px;height:16px;vertical-align: middle;margin: 0 3px 0 0;}
+.login .opt label{color:#555;margin-right:10px;}
+.login .opt img{vertical-align: middle;margin:0 10px 0 -13px;}
+.reg {color:#777;}
+.buy {color:#777; display:none;}
+.reg a,.buy a{margin-left:10px;font-weight:bold;}
+.login .opt,.btn,.reg,.buy{margin-left:50px;}/*缩进*/
+
+
+/*换肤*/
+.m163 .tit{background-position:-383px 0;}
+.m163 .btn{background-position:0 0;}
+.m163 .btn:hover{background-position:-128px 0;}
+.m163 .ipt{background:#F1FAFF;}
+.m163 a{color:#007BBB;}
+
+.m126 .tit{background-position:-383px -64px;}
+.m126 .btn{background-position:0 -64px;}
+.m126 .btn:hover{background-position:-128px -64px;}
+.m126 .ipt{background:#F1FFF7;}
+.m126 a{color:#007B43}
+
+.yeah .tit{background-position:-384px -128px}
+.yeah .btn{background-position:0 -128px}
+.yeah .btn:hover{background-position:-128px -128px}
+.yeah .ipt{background-color:#FFF6F6}
+.yeah a{color:#D9333F}
+
+.qiye .tit{background-position:-781px -64px}
+.qiye .btn{background-position:-786px 0}
+.qiye .btn:hover{background-position:-914px 0}
+.qiye .ipt{background-color:#F1FAFF}
+.qiye a{color:#1b598d}
+.qiye .version,.qiye .domain,.qiye .forgetPas,.qiye .reg{display:none;}
+.qiye .getPassword,.qiye .domain-qiye{display:inline;}
+.qiye .buy{display:inline;}
+
+
+/*页脚*/
+#footer dl {float:left;background: #FFF;width:240px;}
+#footer dl dt {width:64px;height:64px;float: left;}
+#footer dl dd{width:170px;float:left;color: #A0A0A0; line-height:18px;}
+#footer dl .wap{background-position: -389px -256px;}
+#footer dl .resume{background-position: -478px -256px;}
+#footer dl .imap{background-position: -577px -256px;}
+#footer dl .tit a{font-weight:bold;font-size: 14px; text-decoration:underline;}
+.trends {line-height:22px;width:220px;margin:-6px 0 20px 10px;float:left;}
+.trends a{margin-left: 6px;text-decoration: underline;}
+
+.copyright{clear:both;border-top: 1px solid #EEE;padding:20px 0;z-index:1; overflow:hidden}
+.copyright ul{margin:0 auto; width:640px;}
+.copyright ul li{float:left; margin-right:10px;color:#888;}
+.copyright .sptln {margin-right: 10px;}
+</style>
+
+<script language="javascript" src="jquery-1.7.2.min.js"></script>
+<script language="javascript">
+$(function(){
+	$("li.mail-163").click(function(){				
+		$(".tab-list,.login,#footer").addClass("m163").removeClass("m126 yeah qiye");
+		$("#domain>option:eq(0)").attr('selected',true);
+	});	
+	$("li.mail-126").click(function(){				
+		$(".tab-list,.login,#footer").addClass("m126").removeClass("m163 yeah qiye");
+		$("#domain>option:eq(1)").attr('selected',true);
+	});
+	$("li.mail-yeah").click(function(){				
+		$(".tab-list,.login,#footer").addClass("yeah").removeClass("m163 m126 qiye");
+		$("#domain>option:eq(2)").attr('selected',true);
+	});
+	$("li.mail-qiye").click(function(){				
+		$(".tab-list,.login,#footer").addClass("qiye").removeClass("m163 m126 yeah");
+	});
+		
+	//下拉列表选择邮箱类型
+	$("#domain").change(function(){
+		var checkIndex=$("#domain").get(0).selectedIndex; //获取所选择项的序号
+		switch (checkIndex)
+		{
+		case 0:
+			$(".tab-list,.login,#footer").addClass("m163").removeClass("m126 yeah qiye");
+			break;
+		case 1:
+			$(".tab-list,.login,#footer").addClass("m126").removeClass("m163 yeah qiye");
+			break;
+		case 2:
+			$(".tab-list,.login,#footer").addClass("yeah").removeClass("m163 m126 qiye");
+			break;		
+		}
+	});
+	
+
+
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="container">
+	<!--头部-->
+	<div id="header">
+    	<a href="#"><img src="image/netease_logo.gif" alt="网易邮箱"></a>
+        <div class="sublogo"></div>
+      <ul class="links">
+            <li><a class="red-text" href="#">手机邮箱</a></li>
+            <li><a href="#">收费邮</a></li>
+            <li><a href="#">国外用户登录</a></li>
+            <li><a href="#">帮助</a></li>
+		</ul>
+    </div>
+    <!--中间-->
+  	<div id="content">
+    	<ul class="tab-list m163">
+        	<li class="mail-163"><a href="#">163邮箱</a></li>
+            <li class="mail-126"><a href="#">126邮箱</a></li>
+            <li class="mail-yeah"><a href="#">Yeah邮箱</a></li>
+            <li class="mail-qiye"><a href="#">qiye邮箱</a></li>
+        </ul>
+        
+        <div class="login m163">
+        	<h2 class="tit">登录163网易邮箱</h2>
+            <form>
+           	  <p>
+           	    <label for="user">帐&nbsp;&nbsp; 号</label>
+           	    <input type="text" name="user" id="user" tabindex="1" class="ipt"><span class="at">@</span>
+           	    <select name="domain" id="domain" tabindex="3" class="domain">
+           	      <option value="163.com" selected>163.com</option>
+           	      <option value="126.com">126.com</option>
+           	      <option value="yeah.net">yeah.net</option>
+       	        </select>
+                <input type="text" name="domain" id="domain" tabindex="2" class="ipt domain-qiye">           	        
+       	      </p>
+              
+           	  <p>
+           	    <label for="pas">密&nbsp;&nbsp; 码</label>
+           	    <input type="password" name="pas" id="pas" tabindex="2" class="ipt">
+                <a class="forgetPas" tabindex="3" href="#" target="_blank">忘记密码？</a>
+                <a class="getPassword" tabindex="3" href="#" target="_blank">进入管理员登录页面</a>
+              </p>
+              
+           	  <p class="version">
+           	    <label for="version">版&nbsp;&nbsp; 本</label>
+           	    <select tabindex="4" name="version" id="version">
+           	      <option value="1" selected>默&nbsp;认</option>
+           	      <option value="5">网易邮箱5.0版</option>
+           	      <option value="4">极速&nbsp;4.0</option>
+           	      <option value="3">简约&nbsp;3.0</option>
+       	        </select>
+           	  </p>
+           	  <p class="opt">
+           	    <label><input tabindex="5" type="checkbox" name="rmbUser" id="rmbUser">记住帐号</label>
+           	    <label><input tabindex="6" type="checkbox" name="chksll" id="chkSLL">SSL安全登录</label>
+                <a tabindex="6" href="#"><img src="image/whyssl.gif" width="16" height="16" alt="什么是SSL登录？" title="什么是SSL登录？"></a>
+                <label><input tabindex="6" type="checkbox" name="allSLL" id="chksll">全程SSL</label>
+              </p>
+              
+           	  <p>
+           	    <input tabindex="7" type="submit" name="submit" id="submit" class="btn" value="登 录">
+           	  </p>
+            </form>
+        	<p class="reg">还没有网易免费邮?<a tabindex="8" href="#">立即注册</a></p>
+            <p class="buy">还没有网易企业邮箱?<a tabindex="8" href="#">立即购买</a></p>
+      </div>
+    </div>
+    <!--尾部-->
+    
+    <div id="footer" class="m163">
+    	<dl>
+        	<dt class="wap">WAP邮箱</dt>
+            <dd class="tit"><a href="#">WAP邮箱</a></dd>
+            <dd>网易全新WAP邮箱</dd>
+            <dd>界面清爽，功能强大</dd>
+        </dl>
+        <dl>
+        	<dt class="resume">简历中心</dt>
+            <dd class="tit"><a href="#">简历中心</a></dd>
+            <dd>使用专业简历模板，精准的行</dd>
+            <dd>业分类，瞄准好工一击即中</dd>
+        </dl>
+        <dl>
+			<dt class="imap">IMAP服务</dt>
+			<dd class="tit"><a href="#">IMAP服务设置视频</a></dd>
+            <dd>视频+图文，手把手教您设置</dd>
+            <dd>IMAP，获得收发邮件最佳体验</dd>
+        </dl>
+        <ul class="trends">
+            <li>·<a href="#" target="_blank">体验手机邮箱赢iPhone</a></li>
+            <li>·<a class="red-text" href="#" target="_blank">网易邮箱8月29日起全面升级公告</a></li>
+            <li>·<a href="#" target="_blank">网易邮箱5.0大抽奖，100%中奖</a></li>
+        </ul>
+       
+        <!--版权栏-->
+        <div class="copyright">
+        	<ul>
+              <li><a href="#" target="_blank"><img src="image/knet.png" alt="可信网站，身份验证"></a></li>
+              <li><a href="#" target="_blank">关于网易</a></li>
+              <li><a href="#" target="_blank">关于网易免费邮</a></li>
+              <li><a href="#" target="_blank">邮箱官方博客</a></li>
+              <li><a href="#" target="_blank">客户服务</a></li>
+              <li><a href="#" target="_blank">隐私政策</a></li>
+              <li><span class="sptln">|</span>网易公司版权所有&nbsp;&copy;&nbsp;1997-2012</li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>

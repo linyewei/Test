@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>焦点图</title>
+<style>
+body{font-family:Verdana, Geneva, sans-serif;}
+*{margin:0; padding:0;}
+a {color:#FFF;text-decoration:none; font-size:14px;}
+a:hover {color:#F00;text-decoration:underline;}
+
+#fd{margin:50px; width:300px;border:1px solid #000;position:relative;zoom:1;}
+#fd p{height:450px;width:300px;background:#FFF;}
+p.now{display:block;}
+p img{width:300px; height:450px;border:0px;}
+
+#fd .titles,#fd .title-bg{position: absolute;left:0px;top:420px;height:30px; line-height:30px;overflow:hidden;}
+#fd .title-bg{background:black;width:300px;opacity:0.5;filter:alpha(opacity=50);}
+#fd .titles{ z-index:9000;padding-left:10px;}
+#fd .change{position:absolute;top:426px; right:5px;height:20px;z-index:9999;font-size: 0;} 
+.change i{font-style:normal;background:#FFF; margin-right:2px;padding:2px 6px; text-align:center; font-size:13px;cursor:pointer;display:inline-block;display: -moz-inline-stack;zoom:1;}
+i.now{ color:#fff;background:red;}
+
+</style>
+</head>
+
+<body>
+<div id="fd">
+	<p class="now"><a href="#1" title="金晨1"><img src="image/金晨1.jpg" /></a><a href="#1" class="titles">金晨1</a></p>
+	<p style="display:none"><a href="#1" title="金晨2"><img src="image/金晨2.jpg" /></a><a href="#1" class="titles">金晨2</a></p>
+	<p style="display:none"><a href="#1" title="金晨3"><img src="image/金晨3.jpg" /></a><a href="#1" class="titles">金晨3</a></p>
+	<p style="display:none"><a href="#1" title="金晨4"><img src="image/金晨4.jpg" /></a><a href="#1" class="titles">金晨4</a></p>
+    
+    <div class="title-bg"></div>
+
+	<div class="change">
+	  <i class="now">1</i>
+		<i>2</i>
+		<i>3</i>
+		<i>4</i>
+	</div>
+</div>
+<script>
+function $(id){return document.getElementById(id)}//获取ID节点的简介方法
+
+var tags=$("fd").getElementsByTagName("i");//获取切换按钮节点
+var cats=$("fd").getElementsByTagName("p");//获取切换内容节点
+var current;//设置当前帧的变量容器
+var timer=3000;//
+	
+function disAll(){//初始所有标签样式
+	for(var i=0; i<tags.length; i++){
+	   tags[i].className="";
+	   cats[i].className="";
+	   cats[i].style.display="none";
+	}
+}
+	  
+function setNow(){//获取当前帧的索引值
+  for(var i=0; i<tags.length; i++){
+	if(tags[i].className=="now"){
+		  current=i;		  
+		 }
+	  } 
+}
+
+for(var j=0; j<tags.length; j++){//设置手动切换
+ 	  tags[j].onmouseover=function(){
+	   clearInterval(h);	 
+	    disAll();	  
+	     this.className="now";
+		  setNow();
+		   cats[current].style.display="block";
+		   cats[current].className="now";  
+	     }
+	  tags[j].onmouseout=function(){
+	        setNow();	   
+	         h=setInterval("goNext()",3000);
+	     }
+    }
+	
+function goNext(){//自动切换
+   setNow();//获取当前帧索引
+   current+=1;//帧自增1
+  if(current>=parseInt(tags.length)){//判断：如果当前帧索引值是否大于切换按钮总数，如果大于按钮总数则回到初始状态
+    current=0;
+      disAll();
+       cats[0].style.display="block";
+        tags[0].className="now";
+         cats[0].className="now";
+        }
+    else{
+       disAll();
+       cats[current].style.display="block";
+       cats[current].className="now";
+       tags[current].className="now";
+   }
+}
+
+var h=setInterval("goNext()",timer)//开始自动切换
+</script>
+
+</body>
+</html>

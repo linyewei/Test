@@ -1,0 +1,81 @@
+于不同的浏览器，比如Internet Explorer 6,Internet Explorer 7,Mozilla Firefox等，对CSS的解析认识不一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。
+
+这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。
+
+这个针对不同的浏览器写不同的CSS code的过程，就叫CSS hack,也叫写CSS hack。
+
+CSS Hack的原理是什么
+由于不同的浏览器对CSS的支持及解析结果不一样，还由于CSS中的优先级的关系。我们就可以根据这个来针对不同的浏览器来写不同的CSS。
+
+比如 IE6能识别下划线_和星号*，IE7能识别星号*，当不能识别下划线_，而firefox两个都不能认识。等等
+
+书写顺序，一般是将识别能力强的浏览器的CSS写在后面。下面如何写里面说得更详细些。
+
+如何写CSS Hack
+比如要分辨IE6和firefox两种浏览器，可以这样写： 
+
+<style>    
+div{    
+  background:green; /* for firefox */    
+  *background:red;  /* for IE6 */    
+}    
+</style>    
+ <div>我在IE6中看到是红色的，在firefox中看到是绿色的。</div>  
+<style> 
+div{ 
+  background:green; /* for firefox */ 
+  *background:red;  /* for IE6 */ 
+} 
+</style> 
+ <div>我在IE6中看到是红色的，在firefox中看到是绿色的。</div> 
+
+ 解释一下：
+ 
+上面的css在firefox中，它是认识不了后面的那个带星号*的东东是什么的，于是将它过滤掉，不予理睬，解析得到的结果是:div{background:green},于是理所当然这个div的背景是绿色的。 
+
+
+在IE6中呢，它两个background都能识别出来，它解析得到的结果是:div{background:green;background:red;},于是根据优先级别，处在后面的red的优先级高，于是当然这个div的背景颜色就是红色的了。
+
+CSS hack:区分IE6，IE7，firefox区别不同浏览器，CSS hack写法：
+
+区别IE6与FF：
+
+background:orange;*background:blue;  
+background:orange;*background:blue;
+
+区别IE6与IE7：
+
+background:green !important;background:blue;  
+background:green !important;background:blue;
+
+区别IE7与FF：
+
+background:orange; *background:green;  
+background:orange; *background:green;
+
+区别FF，IE7，IE6：
+
+background:orange;*background:green !important;*background:blue;  
+background:orange;*background:green !important;*background:blue;
+
+注：IE都能识别*;标准浏览器(如FF)不能识别*； 
+
+IE6能识别*，但不能识别 !important, 
+IE7能识别*，也能识别!important; 
+FF不能识别*，但能识别!important; 
+           IE6 IE7 FF 
+*           √ √ × 
+!important  × √ √ 
+
+另外再补充一个，下划线”_”, IE6支持下划线，IE7和firefox均不支持下划线。
+
+于是大家还可以这样来区分IE6，IE7，firefox 
+
+div{: background:orange;   
+*background:green;   
+_background:blue;}  
+div{: background:orange;
+*background:green;
+_background:blue;}
+
+注：不管是什么方法，书写的顺序都是firefox的写在前面，IE7的写在中间，IE6的写在最后面。

@@ -1,0 +1,51 @@
+1、在<body>标签中加入以下代码:
+　　onload="setVariables();checkLocation()"
+2.在<body></body>区中加入以下代码，值得注意的是导航图片可以到frontpage的设计页面中替换:
+
+<script language="JavaScript">
+function setVariables() {
+if (navigator.appName == "Netscape") {
+v=".top=";
+dS="document.";
+sD="";
+y="window.pageYOffset";
+}
+else {
+v=".pixelTop=";
+dS="";
+sD=".style";
+y="document.body.scrollTop+200";
+   }
+}
+function checkLocation() {
+object="object1";
+yy=eval(y);
+eval(dS+object+sD+v+yy);
+setTimeout("checkLocation()",10);
+}
+</script>  
+<div id="object1" style="right:10px; position: absolute; top: 194px; z-index: 5; width: 81; height: 293">
+  <table border="0" cellpadding="0" cellspacing="0">
+    <TBODY>      
+      <tr>
+        <td>[GOPREV]</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>[GOINDEX]</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>[GONEXT]</td>
+      </tr>     
+    </TBODY>
+  </table>
+</div>
+
+3、右边垂直位置
+y="document.body.scrollTop+200";
+这个后面的数字200自己调 

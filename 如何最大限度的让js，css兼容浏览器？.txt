@@ -1,0 +1,15 @@
+CSS浏览器兼容问题的原因有两种，第一种：默认值不一样，比如margin、padding等各种属性值在不同的浏览器中默认值可能不一样，第二种：有些书写方式，如伪类、expression对于IE和FireFox支持都不一样。 
+前一种原因，比较好解决，《超越CSS：Web设计艺术精髓》有说，并且提供了一个标准化浏览器的css文件，后一种解决起来我不知道有什么好招，只能尽量不使用.
+
+对于IE 和 其它浏览器的兼容通常都用以下方式来处理。 
+<!--[if IE]> 
+<style type="text/css"> 
+@import url("http://xxx.com/style/ie.css?9"); 
+</style> 
+<![endif]--> 
+
+<!--[if IE 7]> 
+<style type="text/css"> 
+@import url("http://xxx.com/style/forum-ie7.css?9"); 
+</style> 
+<![endif]--> 

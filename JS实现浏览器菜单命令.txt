@@ -1,0 +1,156 @@
+序：用js实现菜单命令虽然在技术上讲没什么，不过这个算是比较全了。
+
+     每当我们看到别人网页上的打开、打印、前进、另存为、后退、关闭本窗口、禁用右键等实现浏览器命令的链接，而自己苦于不能实现时，是不是感到很遗憾？是不是也想实现？如果能在网页上能实现浏览器的命令，将是多么有意思的事啊！下面我们就来看看如何用Javascript代码实现浏览器菜单命令(以下代码在Windows XP下的浏览器中调试通过)。
+
+一、【文件(F)】菜单中的命令的实现
+
+　　1、〖打开〗命令的实现
+
+　　[格式]:document.execCommand("open")
+　　[说明]这跟VB等编程设计中的webbrowser控件中的命令有些相似，大家也可依此琢磨琢磨。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=document.execCommand("open")>打开</a>
+
+　　2、〖使用 记事本 编辑〗命令的实现 
+
+　　[格式]:location.replace("view-source:"+location)
+　　[说明]打开记事本，在记事本中显示该网页的源代码。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=location.replace("view-source:"+location)>使用 记事本 编辑</a>
+
+　　3、〖另存为〗命令的实现 
+
+　　[格式]:document.execCommand("saveAs")
+　　[说明]将该网页保存到本地盘的其它目录！
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=document.execCommand("saveAs")>另存为</a>
+
+　　4、〖打印〗命令的实现 
+
+　　[格式]:document.execCommand("print")
+　　[说明]当然，你必须装了打印机！
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=document.execCommand("print")>打印</a>
+
+　　5、〖关闭〗命令的实现 
+
+　　[格式]:window.close();return false
+　　[说明]将关闭本窗口。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=window.close();return false)>关闭本窗口</a>
+
+
+二、【编辑(E)】菜单中的命令的实现
+
+　　〖全选〗命令的实现 
+　　[格式]:document.execCommand("selectAll")
+　　[说明]将选种网页中的全部内容！
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=document.execCommand("selectAll")>全选</a>
+
+三、【查看(V)】菜单中的命令的实现
+
+　　1、〖刷新〗命令的实现 
+
+　　[格式]:location.reload() 或 history.go(0)
+　　[说明]浏览器重新打开本页。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=location.reload()>刷新</a>
+　　或加入:<a href="#" onclick=history.go(0)>刷新</a> 
+
+　　2、〖源文件〗命令的实现 
+
+　　[格式]:location.replace("view-source:"+location)
+　　[说明]查看该网页的源代码。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=location.replace("view-source:"+location)>查看源文件</a>
+
+
+　　3、〖全屏显示〗命令的实现 
+
+　　[格式]:window.open(document.location,"url","fullscreen")
+　　[说明]全屏显示本页。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=window.open(document.location,"url","fullscreen")>全屏显示</a>
+
+
+四、【收藏(A)】菜单中的命令的实现
+
+　　1、〖添加到收藏夹〗命令的实现 
+
+　　[格式]:window.external.AddFavorite('url', '“网站名”)
+　　[说明]将本页添加到收藏夹。
+　　[举例]在<body></body>之间加入：
+　　<a href="javascript:window.external.AddFavorite('http://oh.jilinfarm.com', '胡明新的个人主页')">添加到收藏夹</a> 
+
+　　2、〖整理收藏夹〗命令的实现 
+
+　　[格式]:window.external.showBrowserUI("OrganizeFavorites",null)
+　　[说明]打开整理收藏夹对话框。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=window.external.showBrowserUI("OrganizeFavorites",null)>整理收藏夹</a> 
+
+五、【工具(T)】菜单中的命令的实现
+
+　　〖internet选项〗命令的实现 
+
+　　[格式]:window.external.showBrowserUI("PrivacySettings",null)
+　　[说明]打开internet选项对话框。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=window.external.showBrowserUI("PrivacySettings",null)>internet选项</a> 
+
+
+六、【工具栏】中的命令的实现
+
+　　1、〖前进〗命令的实现 
+
+　　[格式]history.go(1) 或 history.forward()
+　　[说明]浏览器打开后一个页面。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=history.go(1)>前进</a>
+　　或加入:<a href="#" onclick=history.forward()>前进</a>
+
+　　2、〖后退〗命令的实现 
+
+　　[格式]:history.go(-1) 或 history.back()
+　　[说明]浏览器返回上一个已浏览的页面。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=history.go(-1)>后退</a>
+　　或加入:<a href="#" onclick=history.back()>后退</a>
+
+　　3、〖刷新〗命令的实现 
+
+　　[格式]:document.reload() 或 history.go(0)
+　　[说明]浏览器重新打开本页。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=location.reload()>刷新</a>
+　　或加入:<a href="#" onclick=history.go(0)>刷新</a> 
+
+七、其它命令的实现 
+
+　　〖定时关闭本窗口〗命令的实现 
+　　[格式]:settimeout(window.close(),关闭的时间)
+　　[说明]将关闭本窗口。
+　　[举例]在<body></body>之间加入：
+　　<a href="#" onclick=setTimeout(window.close(),3000)>3秒关闭本窗口</a>
+
+　　如果大家还整理出其他用Javascript实现的命令，不妨投稿来和大家分享。
+
+　　【附】为了方便读者，下面将列出所有实例代码，你可以把它们放到一个html文件中，然后预览效果。html文件下载。
+
+运行代码:
+<a href="#" onclick=document.execCommand("open")>打开</a><br>
+　　<a href="#" onclick=location.replace("view-source:"+location)>使用 记事本 编辑</a><br>
+　　<a href="#" onclick=document.execCommand("saveAs")>另存为</a><br>
+　　<a href="#" onclick=document.execCommand("print")>打印</a><br>
+　　<a href="#" onclick=window.close();return false)>关闭本窗口</a><br>
+　　<a href="#" onclick=document.execCommand("selectAll")>全选</a><br>
+　　<a href="#" onclick=location.reload()>刷新</a><a href="#" onclick=history.go(0)>刷新</a><br> 
+　　<a href="#" onclick=location.replace("view-source:"+location)>查看源文件</a> <br>
+　　<a href="#" onclick=window.open(document.location,"url","fullscreen")>全屏显示</a> <br> 
+　　<a href="javascript:window.external.AddFavorite('http://homepage.yesky.com', '天极网页陶吧')">添加到收藏夹</a> <br>
+　　<a href="#" onclick=window.external.showBrowserUI("OrganizeFavorites",null)>整理收藏夹</a> <br>
+　　<a href="#" onclick=window.external.showBrowserUI("PrivacySettings",null)>internet选项</a> <br>
+　　<a href="#" onclick=history.go(1)>前进1</a><a href="#" onclick=history.forward()>前进2</a><br>
+　　<a href="#" onclick=history.go(-1)>后退1</a><a href="#" onclick=history.back()>后退2</a><br>
+　　<a href="#" onclick=setTimeout('window.close()',3000)>3秒关闭本窗口</a><br> 
