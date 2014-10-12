@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>CSS下拉菜单</title>
+<style type="text/css">
+* {
+  margin:0px;
+  padding:0px;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:14px;
+}
+#nav {
+  list-style:none;
+  margin:50px;
+}
+#nav li {
+  background:#000000;
+  float:left;
+  position:relative;/*相对定位*/
+}
+#nav li a {
+  display:block;
+  line-height:30px;
+  color:#fff;
+  padding:0px 15px;
+  text-transform:capitalize;
+  text-decoration:none;
+}
+#nav li a:hover {
+  background:#FF5852;
+}
+#nav li dl {
+  width:160px;
+  background:#333;
+  display:none;
+  position:absolute;/*绝对定位现*/
+  top:30px;
+  left:0px;
+}
+#nav li dl dd a {
+  font-size:12px;
+  color:#FFF;
+  text-decoration:none;
+  line-height:30px;
+}
+#nav li dl dd a:hover {
+  background:#FF5852;
+}
+#nav li:hover dl {
+  display:block;/*当鼠标移动到li上时dl显现*/
+}
+</style>
+</head>
+
+<body>
+<ul id="nav">
+  <li><a href="#" id="a">home</a>
+    <dl>
+      <dd><a href="#">news</a></dd>
+      <dd><a href="#">music</a></dd>
+      <dd><a href="#">about</a></dd>
+    </dl>
+  </li>
+  <li><a href="#" id="b">about</a>
+    <dl>
+      <dd><a href="#">about us</a></dd>
+      <dd><a href="#">team</a></dd>
+      <dd><a href="#">Corporate culture</a></dd>
+    </dl>
+  </li>
+  <li><a href="#" id="c">news</a>
+    <dl>
+      <dd><a href="#">International news</a></dd>
+      <dd><a href="#">Company News</a></dd>
+      <dd><a href="#">Industry News</a></dd>
+    </dl>
+  </li>
+  <li><a href="#" id="d">products</a>
+    <dl>
+      <dd><a href="#">Digital Cameras</a></dd>
+      <dd><a href="#">Computer</a></dd>
+      <dd><a href="#">WordPad</a></dd>
+      <dd><a href="#">Keyboard</a></dd>
+      <dd><a href="#">Mouse</a></dd>
+      <dd><a href="#">DVD-ROM</a></dd>
+    </dl>
+  </li>
+  <li><a href="#" id="e">services</a></li>
+  <li><a href="#" id="f">clients</a>
+    <dl>
+      <dd><a href="#">Microsoft</a></dd>
+      <dd><a href="#">IBM</a></dd>
+      <dd><a href="#">Adobe</a></dd>
+      <dd><a href="#">Lenovo</a></dd>
+      <dd><a href="#">Sony</a></dd>
+    </dl>
+  </li>
+  <li><a href="#" id="g">blog</a></li>
+  <li><a href="#" id="h">link</a></li>
+</ul>
+</body>
+</html>
