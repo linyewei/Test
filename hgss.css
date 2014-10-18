@@ -3,7 +3,9 @@
 *{margin:0; padding:0;}
 ul{list-style:none;}
 a{text-decoration:none;}
+a:link{color:#333;}
 a:hover{color:#FF43BE; text-decoration:underline;}
+img{border:0;}
 body{background:#F1F0EE;}
 h3{color:#666;font-family: 'Microsoft YaHei', Tahoma, Verdana;font-weight:500;}
 
@@ -34,6 +36,9 @@ h3{color:#666;font-family: 'Microsoft YaHei', Tahoma, Verdana;font-weight:500;}
 .left dl h3{line-height:30px;}
 .left dl h3 span{font-size:12px;}
 .left dl p{color:#333; line-height:24px;}
+.left .md{position:relative; height:30px;overflow:hidden;}
+.left .md hr{width:240px; margin-top:15px; border:0;background-color:#ccc;height:1px; text-align:left;}
+.left .md span{font-size:10px;display:block; width:40px; height:30px; line-height:30px;position:absolute; top:0; right:0;}
 
 .mod{width:100%;margin-bottom:10px;}
 .mod a{color:#333;}
