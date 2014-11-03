@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>JS实现隔行着色</title>
+<style type="text/css">
+#list{border:1px solid #007108; border-collapse:collapse;font-size:14px;background-color:#d9ffdc;
+}
+
+#list th,#list td{border:1px solid #007108;padding:5px;
+}
+#list th{background:#00a40c; color:#FFF;}
+
+#list tr.col{background:#a5e5aa;}
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oTr=document.getElementById("list");
+	for(var i=0;i<oTr.rows.length;i++){
+		if(i%2==0)
+			oTr.rows[i].className="col";
+		}
+	}
+</script>
+
+</head>
+
+<body>
+<table id="list">
+  <caption>
+    隔行着色
+  </caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Nationality</th>
+    <th>Career</th>
+  </tr>
+  <tr>
+    <td>Tom</td>
+    <td>23</td>
+    <td>China</td>
+    <td>worker</td>
+  </tr>
+  <tr>
+    <td>kobe</td>
+    <td>34</td>
+    <td>England</td>
+    <td>actor</td>
+  </tr>
+  <tr>
+    <td>Jack</td>
+    <td>25</td>
+    <td>Japanese</td>
+    <td>doctor</td>
+  </tr>
+  <tr>
+    <td>Julia</td>
+    <td>30</td>
+    <td>American</td>
+    <td>teacher</td>
+  </tr>
+  <tr>
+    <td>mark</td>
+    <td>18</td>
+    <td>France</td>
+    <td>accountan</td>
+  </tr>
+  <tr>
+    <td>Atel</td>
+    <td>31</td>
+    <td>Moscow</td>
+    <td>artist</td>
+  </tr>
+</table>
+
+</body>
+</html>

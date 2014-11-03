@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+<title>日期</title>
+<style type="text/css">
+
+</style>
+
+</head>
+
+<body>
+<table>
+
+<script type="text/javascript">
+var MyDate=new Date();
+var iYear=MyDate.getFullYear();
+var iMonth=MyDate.getMonth()+1;
+var iDate=MyDate.getDate();
+var iDay=MyDate.getDay();
+switch (iDay){
+	case 0:
+		iDay="星期日";
+		break;
+	case 1:
+		iDay="星期一";
+		break;
+	case 2:
+		iDay="星期二";
+		break;
+	case 3:
+		iDay="星期三";
+		break;
+	case 4:
+		iDay="星期四";
+		break;
+	case 5:
+		iDay="星期五";
+		break;
+	case 6:
+		iDay="星期六";
+		break;
+	default:
+		iDay="error!";
+}
+
+document.write("今天是"+iYear+"年"+iMonth+"月"+iDate+"日，"+iDay);
+</script>
+
+</table>
+</body>
+</html>

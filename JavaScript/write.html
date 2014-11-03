@@ -1,0 +1,17 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body style="background:#fc3;">
+<h1>请使用 document.write() 仅仅向文档输出写内容。</h1>
+<p id="demo">如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖。</p>
+<input type="button" value="点我" onclick="myFun()"></input>
+
+<script type="text/javascript">
+	function myFun(){
+		document.write('整个 HTML 页面将被覆盖了')
+
+	}
+</script>
+</body>
+</html>

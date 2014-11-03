@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+<title>setAttribute设置节点属性</title>
+<style type="text/css"></style>
+
+<script type="text/javascript">
+function changeImg(){
+	var myImg=document.getElementsByTagName("img")[0];
+	//alert(myImg.getAttribute("alt"));				//getAttribute获取alt属性
+	myImg.setAttribute("src","../image/google.gif");	//设置src属性
+	myImg.setAttribute("alt","谷歌");				//设置alt属性
+	
+}
+</script>
+
+</head>
+
+<body>
+<img onclick="changeImg()" src="../image/baidu.gif" alt="百度">
+</body>
+</html>

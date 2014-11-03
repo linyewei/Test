@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单验证</title>
+<style type="text/css">
+body{background: #f2f2f2;}
+#form1{width: 600px; padding: 20px; background:#fff;border: 1px solid #dadada;margin: 50px auto;}
+label{width:100px;text-align:right;display:inline-block;}
+input{height: 20px;padding: 8px;border: 1px solid #e3e3e3;border-top: 1px solid #ccc;width: 252px;}
+input[type=submit]{width: 130px; display:block; height: 35px; background:#ff7e00;color: #fff; border: none; font-size: 16px; font-weight: bold; cursor: pointer;margin: 0 auto; }
+span{font-size: 12x; text-indent:20px; display:inline-block; margin-left:8px;}
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" onsubmit="return check()">
+  <p><label for="username">用户名：</label>
+    <input type="text" id="username" onblur="checkName()"><span id="check_tips"></span>
+  </p>
+  <p><label for="usermail">邮箱：</label>
+    <input type="email" id="usermail" onblur="checkMail()"><span id="mail_tips"></span>
+  </p>
+  <p><label for="pwa">设置密码：</label>
+    <input type="password" id="pwa" onblur="checkPwa()"><span id="pwa_tips"></span>
+  </p>
+  <p><label for="pwb">确认密码：</label>
+    <input type="password" id="pwb" onblur="checkPwb()"><span id="pwb_tips"></span>
+  </p>
+  <input type="submit" value="立即注册">
+</form>
+
+<script type="text/javascript">
+
+  function trim(str){ //删除左右两端的空格
+    return str.replace(/(^\s*)|(\s*$)/g, "");
+　}
+
+	function checkName(){
+		var t=document.getElementById("check_tips");
+    var n=trim(document.forms['form1']['username'].value);
+    if (n==""||n==null){
+      t.innerHTML="用户名不能为空";
+      t.style.background="url(images/error.gif) no-repeat";
+      return false;
+    }
+    else{
+      t.innerHTML="&nbsp;";
+      t.style.background="url(images/right.gif) no-repeat";
+    };
+	}
+
+  function checkMail(){
+    var t=document.getElementById("mail_tips");
+    var m=trim(document.forms['form1']['usermail'].value);
+    var atpos=m.indexOf('@');
+    var dotpos=m.lastIndexOf(".");
+    //alert(l+' '+atpos+' '+dotpos);
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=m.length){//dotpos最前不超过@后面第1个字符，最尾不能在email最后，也不能在倒数第二位，因为没有单字母后缀
+      t.innerHTML="邮箱格式错误";
+      t.style.background="url(images/error.gif) no-repeat";
+      return false;
+    }
+    else{
+      t.innerHTML="&nbsp;";
+      t.style.background="url(images/right.gif) no-repeat";
+    }
+  }
+
+  function checkPwa(){
+    var t=document.getElementById("pwa_tips");
+    var p1=document.forms['form1']['pwa'].value;
+    if (p1==""||p1==null){
+      t.innerHTML="请输入新密码";
+      t.style.background="url(images/error.gif) no-repeat";
+      return false;
+    }
+    else{
+      t.innerHTML="&nbsp;";
+      t.style.background="url(images/right.gif) no-repeat";
+    };
+  }
+
+  function checkPwb(){
+    var t=document.getElementById("pwb_tips");
+    var p1=document.forms['form1']['pwa'].value;
+    var p2=document.forms['form1']['pwb'].value;
+    if (p2==""||p2==null){
+      t.innerHTML="请输入确认密码";
+      t.style.background="url(images/error.gif) no-repeat";
+      return false;
+    }
+    else if (p2!=p1){
+      t.innerHTML="密码输入不一致";
+      t.style.background="url(images/error.gif) no-repeat";
+      return false;
+    }
+    else{
+      t.innerHTML="&nbsp;";
+      t.style.background="url(images/right.gif) no-repeat";
+    };
+  }
+
+  function check(){
+    var cn=checkName();
+    var cm=checkMail();
+    var cpa=checkPwa();
+    var cpb=checkPwb();
+    if (cn==false||cm==false||cpa==false||cpb==false){
+      return false;
+    }
+  }
+</script>
+</body>
+</html>

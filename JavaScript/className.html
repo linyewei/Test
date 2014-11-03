@@ -1,0 +1,27 @@
+﻿<html>
+<head>
+<title>使用className属性</title>
+<style type="text/css">
+.myUL1{font-family:"微软雅黑";}
+.myUL2{color:red; text-decoration:underline; }
+
+</style>
+
+<script type="text/javascript">
+function change(){
+	var oUL=document.getElementsByTagName("ul")[0];
+	//oUL.className="myUL2";//修改CSS属性
+	oUL.className+=" myUL2";//追加CSS属性,注意myUL2前面的空格
+}
+</script>
+
+</head>
+
+<body>
+<ul onclick="change()" class="myUL1">
+	<li>微软雅黑</li>
+	<li>单击改变</li>
+	<li>字体红色</li>
+</ul>
+</body>
+</html>

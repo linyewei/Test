@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JS下拉菜单</title>
+<style type="text/css">
+*{margin:0; padding:0; font-family: "微软雅黑";}
+#nav {margin:50px;width:300px;background:#000; color:#fff;height:30px;line-height:30px;text-align:center;list-style:none;font-size:14px;}
+#nav a{color:#fff;display:block; text-decoration:none;}
+#nav li{width:90px;float:left;position:relative;z-index:1;}
+#nav li a:hover{background:#FF5852;}
+#nav li .submenu{width:90px;margin:0 auto;background:#353535;position:absolute;left:0;top:30px;display:none;}
+#nav li .submenu dd{color:#fff;}
+</style>
+
+
+<script type="text/javascript">
+
+function Menu(){
+
+	function changeStyle(obj,flag)
+	{
+		obj.getElementsByTagName("dl")[0].style.display = flag;
+	}
+	
+	var nav = document.getElementById("nav").childNodes;
+	for (var i=0;i<nav.length;i++)
+	{
+		if (nav[i].className=="menu")
+		{
+			nav[i].onmouseover = function(){changeStyle(this,"block")};
+			nav[i].onmouseout = function(){changeStyle(this,"none")};
+		}
+	}
+
+	
+}
+window.onload=Menu; 
+
+</script>
+
+</head>
+<body>
+<ul id="nav">
+<!-- 有二级菜单的，给li加class="menu" 没有的不用加 -->
+		<li class="menu">
+			<a href="#">国家政务</a>
+			<dl class="submenu">
+				<dd><a href="#">时政要闻</a></dd>
+				<dd><a href="#">远程党教</a></dd>
+				<dd><a href="#">村务管理</a></dd>
+			</dl>
+		</li>
+		<li>
+			<a href="#">网络服务</a>
+		</li>
+		<li class="menu">
+			<a href="#">信息交流</a>
+			<dl class="submenu">
+				<dd><a href="#">求购信息</a></dd>
+				<dd><a href="#">转让信息</a></dd>
+			</dl>
+		</li>
+</div>
+<!--end nav-->
+</script>
+
+</body>
+</html>

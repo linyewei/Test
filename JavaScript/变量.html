@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>变量</title>
+</head>
+<body>
+<p id="p1">变量v：</p>
+<p id="p2">...</p>
+
+<button type="button" onclick="f1()">显示变量值</button>
+<button type="button" onclick="f2()">检验是否全局</button>
+
+<script type="text/javascript">
+
+	
+	function f1(){
+		v='Benz';
+		document.getElementById('p2').innerHTML=v;		
+	}
+
+	function f2(){
+		//document.getElementById('p2').innerHTML=v;
+		alert(typeof v)	
+	}
+	
+</script>
+
+</body>
+</html>
