@@ -36,19 +36,14 @@
 var mDD = document.getElementById("tablit").getElementsByTagName("dd");
 var mDIV= document.getElementById("tablit").getElementsByTagName("div");
 
-
 for (var i=0; i<mDD.length; i++){
+	
 	(function(i){
-		mDD[i].addEventListener('mouseover',function(){onMou(i)});
-	})(i)
-
-	// mDD[i].onclick=function(){
-	// 	onMou(i);
-	// }(i)
+		mDD[i].onmouseover=function(){onMou(i)};
+	})(i);
+	//mDD[i].onmouseover=function(){onMou(i)};
 }
 
-// mDD[0].addEventListener('mouseover',function(){onMou(0)});
-// mDD[1].addEventListener('mouseover',function(){onMou(1)});
 
 function onMou(s){
 	for (var j=0;j<mDD.length;j++){
