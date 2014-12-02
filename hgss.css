@@ -61,7 +61,6 @@ div.slideBox div.tips div.nums a.active{ background-color:#093;}
 
 .imglist{width:620px; clear:both; padding-top:30px;}
 .imglist h3{height:40px;line-height:40px;}
-.imgbox{width:620px;overflow: hidden;}
-.imglist ul{width:1000px;position:relative;left:-10px;}
-.imglist ul li{float:left; margin:0 10px;}
+.imgbox{height:164px;overflow: hidden;}
+.imglist ul li{float:left; width:155px; text-align:center;}
 .imglist ul li p{text-align:center; line-height:24px;color:#666;}
