@@ -16,12 +16,12 @@ h3{color:#666;font-family: 'Microsoft YaHei', Tahoma, Verdana;font-weight:500;}
 #top{width:940px; margin:35px auto 0 auto; background:#fff; padding:30px; height:105px;}
 .logo{float:left;}
 .nav{float:right; margin-top:10px;}
-.nav ul{height:35px; margin:0 auto;}
-.nav ul li{float:left; font-size:16px; line-height:35px;width:95px;}
-.nav ul li a{color:#333;padding:0 10px; display:block; text-align:center;}
-.nav ul li a:hover{text-decoration:none; background:#FF43BE;color:#fff;}
-.nav ul li .on{background:#FF43BE;color:#fff;}
-.nav ul span{background:#ccc;width:1px; height:20px; float:left; margin:7px 0;}
+.nav dl{height:35px; margin:0 auto;}
+.nav dl dt{float:left; font-size:16px; line-height:35px;width:95px;}
+.nav dl dt a{color:#333;padding:0 10px; display:block; text-align:center;}
+.nav dl dt a:hover{text-decoration:none; background:#FF43BE;color:#fff;}
+.nav dl dt .on{background:#FF43BE;color:#fff;}
+.nav dl dd{background:#ccc;width:1px; height:20px; float:left; margin:7px 0;}
 
 div.slideBox{ position:relative; width:940px; height:410px; overflow:hidden;font-family:"微软雅黑";}
 div.slideBox ul.items{ position:absolute; float:left; background:none; list-style:none; padding:0px; margin:0px;}
