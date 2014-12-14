@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出层</title>
+<style type="text/css">
+* {
+	margin:0px;
+	padding:0px;
+  font-family:"微软雅黑", Arial, Helvetica, sans-serif;color: #fff;
+}
+input{margin: 50px; width: 90px; height: 35px; background:#C9394A; cursor: pointer; border: none;}
+#mask{background: #000; opacity:0.75;filter:alpha(opacity=75); position: absolute; left: 0; top: 0; z-index: 10;}
+#login{background:#dedede; width: 480px; height: 320px; position: fixed;left: 30%; top:20%; z-index:100;}
+#login h1{width: 100%; height: 40px; line-height: 40px; background:#C9394A;  font-size:16px; text-indent:15px;}
+#login span{display: block; position: absolute;top: 8px; right: 10px; cursor: pointer;}
+</style>
+</head>
+<body>
+<input id="btn" type="button" value="登录">
+<!-- <div id="mask"></div>
+<div id="login">
+	<h1>登录</h1>
+	<span>X</span>
+</div> -->
+</body>
+<script type="text/javascript">
+	function modal(){
+		var iHeight=document.body.scrollHeight;
+		var iWidth=document.body.scrollWidth;
+		
+		var oMask=document.createElement("div");
+		oMask.id="mask";
+		oMask.style.height=iHeight+"px";
+		oMask.style.width=iWidth+"px";
+		document.body.appendChild(oMask);
+
+		var oLogin=document.createElement("div");
+		oLogin.id="login";
+		oLogin.innerHTML='<h1>登录</h1><span id="oClose">×</span>';
+		document.body.appendChild(oLogin);
+
+		var oClose=document.getElementById("oClose");
+		oMask.onclick=oClose.onclick=function(){
+			document.body.removeChild(oMask);
+			document.body.removeChild(oLogin);
+		}
+	}
+	
+	var btn=document.getElementById("btn");
+	btn.onclick=function(){
+		modal();
+		
+	}
+
+	
+</script>
+</html>
