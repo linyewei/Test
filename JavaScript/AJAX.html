@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX</title>
+<script type="text/javascript">
+function loadXMLDom(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();// code for IE7+, Firefox, Chrome
+	}else{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");// code for IE6, IE5
+	}
+
+	xmlhttp.open("get","http://localhost/ajax_info.txt",true);
+
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	}
+		
+	xmlhttp.send();
+}
+
+	
+</script>
+</head>
+
+<body>
+<div id="myDiv"><h2>使用 AJAX 修改该文本内容</h2></div>
+<input type="button" value="AJAX请求" onclick="loadXMLDom()">
+</body>
+
+
+</html>
