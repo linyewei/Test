@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格隔行着色</title>
+<style type="text/css">
+table{margin: auto; border: 1px solid #699;}
+caption{margin: auto; padding: 0.2em; font-size: 1.2em; font-weight: bold;}
+th{font-weight: normal; font-style: italic;text-align: left; border: 1px dotted #699; background-color: #9cc;}
+th,td{width: 10em;padding: 0.5em;}
+.odd{background-color:#ddd;}
+</style>
+</head>
+<body>
+<table>
+	<caption>活动安排</caption>
+	<tr><th>时间</th><th>地点</th></tr>
+	<tr><td>1月15日</td><td>北京</td></tr>
+	<tr><td>1月16日</td><td>上海</td></tr>
+	<tr><td>1月17日</td><td>广州</td></tr>
+</table>
+
+</body>
+<script type="text/javascript">
+//共享onload函数
+function addLoadEvent(func){
+	var oldonload=window.onload;
+	if (typeof window.onload!="function") {
+		window.onload=func;
+	}else{
+		window.onload=function(){
+			oldonload();
+			func();
+		}
+	};
+}
+
+//给一个元素追加新的class
+function addClass(element,value){
+	if (!element.className) {//检测元素原先是否存在class
+		element.className=value;
+	} else{
+		newClassName=element.className;
+		newClassName+=" ";
+		newClassName+=value;
+		element.className=newClassName;
+	};
+}
+
+//表格隔行着色
+function stripeTables(){
+	if (!document.getElementsByTagName) return false;
+	var tables=document.getElementsByTagName("table");
+	var odd, rows;
+	for (var i=0; i<tables.length; i++){
+		odd=false;
+		rows=tables[i].getElementsByTagName('tr');
+		for (var j = 0; j<rows.length; j++) {
+			if (odd==true) {
+				addClass(rows[j],"odd");
+				odd=false;
+			} else{
+				odd=true;
+			};
+	
+		};
+	}
+}
+
+//表格行鼠标经过效果
+function heightlightRows(){
+	if (!document.getElementsByTagName) return false;
+	var rows=document.getElementsByTagName("tr");
+	for (var i = 0; i < rows.length; i++) {
+		rows[i].onmouseover=function(){
+			this.style.fontWeight="bold";
+		}
+		rows[i].onmouseout=function(){
+			this.style.fontWeight="normal";
+		};
+	};
+}
+
+addLoadEvent(stripeTables);
+addLoadEvent(heightlightRows);
+</script>
+</html>

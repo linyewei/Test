@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS-DOM</title>
+<style type="text/css">
+/*#example{color:grey; font-family: Arial,'微软雅黑';}*/
+.intro{font-weight: bold;font-size: 1.2em;color: red;}
+</style>
+</head>
+<body>
+<h1 title="me">China to position potato as staple food</h1>
+<p>This is 1st paragraph</p>
+<p>This is 2nd paragraph</p>
+<h1>Attack on French satirical magazine kills 12</h1>
+<p>This is 1st paragraph</p>
+<p>This is 2nd paragraph</p>
+</body>
+
+<script type="text/javascript">
+var paras=document.getElementsByTagName("p");
+for (var i = 0; i < paras.length; i++) {
+	paras[i].onclick=function(){
+		alert("You click on a paragraph.");
+	}
+};
+
+//给一个元素追加新的class
+function addClass(element,value){
+	if (!element.className) {//检测元素原先是否存在class
+		element.className=value;
+	} else{
+		newClassName=element.className;
+		newClassName+=" ";
+		newClassName+=value;
+		element.className=newClassName;
+	};
+}
+
+//获取下一个元素节点
+function getNextElement(node){
+	if(node.nodeType==1){
+		return node;
+	}
+	if(node.nextSibling){
+		return getNextElement(node.nextSibling);
+	}
+	return null;
+}
+
+//设置下一个元素的样式
+function setNextElement(tag,theclass){
+	if (!document.getElementsByTagName) return false;
+	var h1=document.getElementsByTagName(tag);
+	var elem
+	for (var i = 0; i < h1.length; i++) {
+		elem=getNextElement(h1[i].nextSibling);
+		addClass(elem,theclass);
+	};
+}
+
+window.onload=function(){
+	setNextElement("h1","intro");
+}
+</script>
+</html>
+
+<!-- 为什么li没有text节点？ -->
+<!-- 为什么函数里可以引用自己？ -->

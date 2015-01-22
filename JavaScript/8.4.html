@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Explaining the Document Object Model</title>
+<style type="text/css">
+body{font-family:Helvetica, Arial, sans-serif;}
+abbr{color: #69f; font-style: italic;}
+</style>
+
+</head>
+<body>
+  <h1>What is the Document Object Model?</h1>
+  <p>
+    The <abbr title="World Wide Web Consortium">W3C</abbr> defines the <abbr title="Document Object Model">DOM</abbr> as:
+  </p>
+  <blockquote cite="http://www.w3.org/DOM/">
+    <p>
+    A platform- and language-neutral interface that will allow programs
+     and scripts to dynamically access and update the
+     content, structure and style of documents.
+    </p>
+  </blockquote>
+  <p>
+    It is an <abbr title="Application Programming Interface">API</abbr>
+     that can be used to navigate <abbr title="HyperText Markup Language">
+    HTML</abbr> and <abbr title="eXtensible Markup Language">XML
+    </abbr> documents.
+  </p>
+</body>
+<script type="text/javascript">
+  function displayAbbr(){
+    var abbreviation=document.getElementsByTagName("abbr");
+    var dlist=document.createElement("dl");
+
+    for (var i = 0 ; i < abbreviation.length; i++) {
+      var dt=document.createElement("dt");
+      var dd=document.createElement("dd");
+      dt.innerHTML=abbreviation[i].lastChild.nodeValue;
+      dd.innerHTML=abbreviation[i].getAttribute("title");
+      dlist.appendChild(dt);
+      dlist.appendChild(dd);
+    };
+
+    var h1=document.createElement("h1");
+    h1.innerHTML="缩略语：";
+    document.body.appendChild(h1);
+    document.body.appendChild(dlist);
+  }
+
+  function displayAbbreviation(){
+    var abbreviation=document.getElementsByTagName("abbr");
+    var defs=new Array();
+
+    for (var i=0 ; i<abbreviation.length; i++) {
+      var key=abbreviation[i].lastChild.nodeValue;
+      var definition=abbreviation[i].getAttribute("title");
+      defs[key]=definition;
+    };
+
+    var dlist=document.createElement("dl");
+    for (key in defs){
+      var definition=defs[key];
+      var dt=document.createElement("dt");
+      var dt_text=document.createTextNode(key);
+      dt.appendChild(dt_text);
+      var dd=document.createElement("dd");
+      var dd_text=document.createTextNode(definition);
+      dd.appendChild(dd_text);
+      dlist.appendChild(dt);
+      dlist.appendChild(dd);
+    }
+
+    var h1=document.createElement("h1");
+    var h1_text=document.createTextNode("Abbreviation");
+    h1.appendChild(h1_text);
+    document.body.appendChild(h1);
+    document.body.appendChild(dlist);
+  }
+
+  window.onload=displayAbbreviation;
+</script>
+</html>
