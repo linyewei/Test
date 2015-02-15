@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS动画效果10.2</title>
+<style type="text/css">
+#slideshow{width: 100px;height: 100px; background: #dedede; position: relative; overflow: hidden;}
+</style>
+</head>
+
+<body>
+<h1>Web Design</h1>
+<p>These are the things you should know.</p>
+<ol id="linklist">
+	<li>
+		<a href="structure.html">Structure</a>
+	</li>
+	<li>
+		<a href="presentation.html">Presentation</a>
+	</li>
+	<li>
+		<a href="behavior.html">Behavior</a>
+	</li>
+</ol>
+<div id="slideshow">
+	<img src="images/topics.gif" alt="预览图片" id="preview" />
+</div>
+
+<script type="text/javascript">
+function prepareSlideshow(){
+	if (!document.getElementsByTagName) return false;
+	if (!document.getElementById) return false;
+	if (!document.getElementById("linklist")) return false;
+	if (!document.getElementById("slideshow")) return false;
+	var preview=document.getElementById("preview");
+	preview.style.position="absolute";
+	preview.style.left="0px";
+	preview.style.top="0px";
+	var list=document.getElementById("linklist");
+	var links=list.getElementsByTagName("a");
+	links[0].onmouseover=function(){
+			moveElement("preview",-100,0,10);
+		}
+	links[1].onmouseover=function(){
+			moveElement("preview",-200,0,10);
+		}
+	links[2].onmouseover=function(){
+			moveElement("preview",-300,0,10);
+		}
+
+}
+
+
+function moveElement(elementID,final_x,final_y,interval){
+	if (!document.getElementById) return false;
+	if (!document.getElementById(elementID)) return false;
+	var elem=document.getElementById(elementID);
+	if (elem.movement){
+		clearTimeout(elem.movement);
+	}
+	var xpos=parseInt(elem.style.left);//parseInt把字符串的信息提取出来
+	var ypos=parseInt(elem.style.top);
+	if (xpos==final_x && ypos==final_y){
+		return true;
+	}
+	if (xpos<final_x){
+		xpos++;
+	}
+	if (xpos>final_x){
+		xpos--;
+	}
+	if (ypos<final_y){
+		ypos++;
+	}
+	if (ypos>final_y){
+		ypos--;
+	}
+	elem.style.left=xpos+"px";
+	elem.style.top=ypos+"px";
+	var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+	elem.movement=setTimeout(repeat,interval);
+}
+
+window.onload=prepareSlideshow;
+</script>
+</body>
+</html>
