@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>JS下拉菜单</title>
+<title>jquery下拉菜单</title>
 <script src="jquery-1.7.2.min.js"></script>
 <style type="text/css">
 * {
@@ -98,28 +98,26 @@
   };
 */
 
-function dropMenu(menuID,liTag,dlTag){
-  var l=document.getElementById(menuID).getElementsByTagName(liTag);
 
-  for (var i=0; i<l.length; i++) {
-    l[i].onmouseover =function (){menuDisplay(this,"block")};
-    l[i].onmouseout = function (){menuDisplay(this,"none")};
-  };
+var l=$("#nav").children();
 
-  function menuDisplay(m,dis){
-    var d=m.getElementsByTagName(dlTag);
-    if (d.length>0){
-      d[0].style.display = dis;
-    };
-  };
+for (var i=0; i<l.length; i++) {
+    $(l[i]).mouseover(function(){
+      var d=$(this).children("dl");
+      if (d.length>0){
+        d[0].style.display = "block";
+      };
+    });
+ 
+    $(l[i]).mouseout(function(){
+      var d=$(this).children("dl");
+      if (d.length>0){
+        d[0].style.display = "none";
+      };
+    });
 
 };
 
-dropMenu("nav","li","dl");
-
-//var list=document.getElementById("nav").childNodes;
-//var l=document.getElementById("nav").getElementsByTagName('li');
-//alert(l.length);
 
 </script>
 </body>
